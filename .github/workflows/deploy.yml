@@ -35,7 +35,42 @@ jobs:
         run: npm ci || npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          rm -rf dist
+          npm run build
+
+      - name: Verify build artifact integrity
+        run: |
+          echo "=== Verifying dist directory ==="
+          test -f dist/index.html || { echo "ERROR: dist/index.html does not exist!"; exit 1; }
+          
+          echo "=== Checking dist/index.html for invalid unbundled source references ==="
+          if grep -q "main.tsx" dist/index.html; then
+            echo "ERROR: dist/index.html contains raw source reference 'main.tsx'!"
+            exit 1
+          fi
+
+          echo "=== Checking dist/index.html for compiled bundle references ==="
+          if ! grep -q "/assets/" dist/index.html; then
+            echo "ERROR: dist/index.html does not contain '/assets/' bundle references!"
+            exit 1
+          fi
+
+          echo "=== Checking compiled JS bundle in dist/assets ==="
+          count_js=$(find dist/assets -maxdepth 1 -name "*.js" | wc -l)
+          if [ "$count_js" -lt 1 ]; then
+            echo "ERROR: No compiled .js files found in dist/assets/!"
+            exit 1
+          fi
+
+          echo "Artifact validation passed successfully!"
+
+      - name: Inspect build output files
+        run: |
+          echo "=== dist directory file listing (maxdepth 2) ==="
+          find dist -maxdepth 2 -type f | sort
+          echo "=== dist/index.html preview before upload ==="
+          cat dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -48,3 +83,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Print published index.html verification
+        run: |
+          echo "=== Final verification of published dist/index.html ==="
+          cat dist/index.html
+          echo "=== Deployment to ${{ steps.deployment.outputs.page_url }} completed ==="
