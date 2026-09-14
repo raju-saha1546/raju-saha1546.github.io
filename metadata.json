@@ -1,0 +1,6 @@
+{
+  "name": "Raju — Physics • Computation • Experiments",
+  "description": "A modern digital physics laboratory documenting Raju's journey through physics, mathematics, computation, electronics, experiments, and scientific programming.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
