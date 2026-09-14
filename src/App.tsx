@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import CommandPalette from './components/common/CommandPalette';
@@ -11,23 +11,75 @@ import LabNotebookViewer from './components/lab/LabNotebookViewer';
 import ToolsPlatform from './components/tools/ToolsPlatform';
 import ContactSection from './components/contact/ContactSection';
 
+const VALID_TABS = ['home', 'about', 'journey', 'projects', 'notes', 'lab', 'tools', 'contact'];
+
+function parseCurrentRoute(): { tab: string; subId?: string } {
+  if (typeof window === 'undefined') return { tab: 'home' };
+
+  // 1. Check URL hash first (e.g. #projects, #/lab, #tools/double-pendulum)
+  const rawHash = window.location.hash.replace(/^#\/?/, '').trim();
+  if (rawHash) {
+    const parts = rawHash.split(/[/?:&=]/).filter(Boolean);
+    const first = parts[0]?.toLowerCase();
+    const sub = parts.length > 1 ? parts[1] : undefined;
+    if (VALID_TABS.includes(first)) return { tab: first, subId: sub };
+    if (first === 'simulations') return { tab: 'tools', subId: sub };
+    if (first === 'experiments') return { tab: 'lab', subId: sub };
+  }
+
+  // 2. Check pathname (e.g. /projects, /notes, /lab)
+  const path = window.location.pathname.replace(/^\/|\/$/g, '').trim();
+  if (path) {
+    const segments = path.split('/').filter(Boolean);
+    const first = segments[0]?.toLowerCase();
+    const sub = segments.length > 1 ? segments[1] : undefined;
+    if (VALID_TABS.includes(first)) return { tab: first, subId: sub };
+    if (first === 'simulations') return { tab: 'tools', subId: sub };
+    if (first === 'experiments') return { tab: 'lab', subId: sub };
+  }
+
+  return { tab: 'home' };
+}
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState<string>('home');
-  const [activeItemId, setActiveItemId] = useState<string | undefined>(undefined);
+  const initialRoute = parseCurrentRoute();
+  const [activeTab, setActiveTab] = useState<string>(initialRoute.tab);
+  const [activeItemId, setActiveItemId] = useState<string | undefined>(initialRoute.subId);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const syncFromLocation = () => {
+      const route = parseCurrentRoute();
+      setActiveTab(route.tab);
+      if (route.subId) setActiveItemId(route.subId);
+    };
+
+    window.addEventListener('popstate', syncFromLocation);
+    window.addEventListener('hashchange', syncFromLocation);
+    return () => {
+      window.removeEventListener('popstate', syncFromLocation);
+      window.removeEventListener('hashchange', syncFromLocation);
+    };
+  }, []);
 
   const handleNavigate = (tab: string, subId?: string) => {
     // Normalization for aliases
+    let targetTab = tab;
     if (tab === 'simulations') {
-      setActiveTab('tools');
-      if (subId) setActiveItemId(subId);
+      targetTab = 'tools';
     } else if (tab === 'experiments') {
-      setActiveTab('lab');
-      if (subId) setActiveItemId(subId);
-    } else {
-      setActiveTab(tab);
-      if (subId) setActiveItemId(subId);
+      targetTab = 'lab';
     }
+
+    setActiveTab(targetTab);
+    if (subId) setActiveItemId(subId);
+
+    // Update URL hash to support direct link sharing and back/forward navigation
+    const targetHash = subId ? `#${targetTab}/${subId}` : `#${targetTab}`;
+    if (window.location.hash !== targetHash) {
+      window.history.pushState(null, '', targetHash);
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
