@@ -73,7 +73,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             {/* Profile Photo Placeholder */}
             <div className="relative mx-auto w-36 h-36 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950/40 border-2 border-dashed border-cyan-500/40 flex flex-col items-center justify-center p-4 group hover:border-cyan-400 transition">
               <img
-              src="/profile.png"
+              src="/images/profile.png"
               alt="Raju Saha — Physics Student"
               className="w-full h-full object-cover"
               />
