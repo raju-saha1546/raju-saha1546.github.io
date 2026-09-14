@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { BookOpen, Search, Clock, Calendar, Bookmark, ArrowRight, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
-import { NOTES_DATA } from '../../data/notes';
-import MathView from '../common/MathView';
+import { NOTES_DATA } from '../data/notes';
+import MathView from '../components/MathView';
 
 interface NotesReaderProps {
   onOpenSimulation?: (simId: string) => void;

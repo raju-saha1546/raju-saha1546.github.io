@@ -17,14 +17,14 @@ import {
   Search,
   CheckCircle2
 } from 'lucide-react';
-import ResistorCalculator from './ResistorCalculator';
-import OhmsLawCalculator from './OhmsLawCalculator';
-import UnitConverter from './UnitConverter';
-import ScientificPlotter from './ScientificPlotter';
-import DataAnalysisTool from './DataAnalysisTool';
-import PhysicalConstantsExplorer from './PhysicalConstantsExplorer';
-import FormulaExplorer from './FormulaExplorer';
-import ElectronicsSimulator from './ElectronicsSimulator';
+import ResistorCalculator from '../tools/ResistorCalculator';
+import OhmsLawCalculator from '../tools/OhmsLawCalculator';
+import UnitConverter from '../tools/UnitConverter';
+import ScientificPlotter from '../tools/ScientificPlotter';
+import DataAnalysisTool from '../tools/DataAnalysisTool';
+import PhysicalConstantsExplorer from '../tools/PhysicalConstantsExplorer';
+import FormulaExplorer from '../tools/FormulaExplorer';
+import ElectronicsSimulator from '../tools/ElectronicsSimulator';
 
 // Simulations
 import ProjectileSimulation from '../simulations/ProjectileSimulation';

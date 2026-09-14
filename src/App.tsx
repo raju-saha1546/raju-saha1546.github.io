@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import CommandPalette from './components/common/CommandPalette';
-import HomePage from './components/home/HomePage';
-import AboutPage from './components/about/AboutPage';
-import JourneyPage from './components/journey/JourneyPage';
-import ProjectsShowcase from './components/projects/ProjectsShowcase';
-import NotesReader from './components/notes/NotesReader';
-import LabNotebookViewer from './components/lab/LabNotebookViewer';
-import ToolsPlatform from './components/tools/ToolsPlatform';
-import ContactSection from './components/contact/ContactSection';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import CommandPalette from './components/CommandPalette';
+import Home from './pages/Home';
+import About from './pages/About';
+import Journey from './pages/Journey';
+import Projects from './pages/Projects';
+import Notes from './pages/Notes';
+import Lab from './pages/Lab';
+import Tools from './pages/Tools';
+import Contact from './pages/Contact';
 
 const VALID_TABS = ['home', 'about', 'journey', 'projects', 'notes', 'lab', 'tools', 'contact'];
 
@@ -101,14 +101,14 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-        {activeTab === 'home' && <HomePage onNavigate={handleNavigate} />}
-        {activeTab === 'about' && <AboutPage onNavigate={handleNavigate} />}
-        {activeTab === 'journey' && <JourneyPage onNavigate={handleNavigate} />}
-        {activeTab === 'projects' && <ProjectsShowcase />}
-        {activeTab === 'notes' && <NotesReader onOpenSimulation={id => handleNavigate('tools', id)} />}
-        {activeTab === 'lab' && <LabNotebookViewer />}
-        {activeTab === 'tools' && <ToolsPlatform initialItemId={activeItemId || 'resistor'} />}
-        {activeTab === 'contact' && <ContactSection />}
+        {activeTab === 'home' && <Home onNavigate={handleNavigate} />}
+        {activeTab === 'about' && <About onNavigate={handleNavigate} />}
+        {activeTab === 'journey' && <Journey onNavigate={handleNavigate} />}
+        {activeTab === 'projects' && <Projects />}
+        {activeTab === 'notes' && <Notes onOpenSimulation={id => handleNavigate('tools', id)} />}
+        {activeTab === 'lab' && <Lab />}
+        {activeTab === 'tools' && <Tools initialItemId={activeItemId || 'resistor'} />}
+        {activeTab === 'contact' && <Contact />}
       </main>
 
       {/* Global Footer */}

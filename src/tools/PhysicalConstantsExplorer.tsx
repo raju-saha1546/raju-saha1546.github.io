@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Database, Search, Copy, Check } from 'lucide-react';
-import { PHYSICAL_CONSTANTS } from '../../data/constants';
-import MathView from '../common/MathView';
+import { PHYSICAL_CONSTANTS } from '../data/constants';
+import MathView from '../components/MathView';
 
 export const PhysicalConstantsExplorer: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

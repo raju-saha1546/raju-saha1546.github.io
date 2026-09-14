@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ClipboardList, Calendar, CheckCircle2, AlertTriangle, Lightbulb, Compass, Search } from 'lucide-react';
-import { LAB_EXPERIMENTS } from '../../data/labNotebook';
-import MathView from '../common/MathView';
+import { LAB_EXPERIMENTS } from '../data/labNotebook';
+import MathView from '../components/MathView';
 
 export const LabNotebookViewer: React.FC = () => {
   const [selectedExpId, setSelectedExpId] = useState<string>(LAB_EXPERIMENTS[0].id);

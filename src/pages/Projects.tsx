@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { FolderGit2, Search, ArrowRight } from 'lucide-react';
-import { PROJECTS_DATA } from '../../data/projects';
-import { Project } from '../../types';
-import MathView from '../common/MathView';
-import ProjectDetailModal from './ProjectDetailModal';
+import { PROJECTS_DATA } from '../data/projects';
+import { Project } from '../types';
+import MathView from '../components/MathView';
+import ProjectDetailModal from '../components/ProjectDetailModal';
 
 interface ProjectsShowcaseProps {
   onNavigateToTools?: (toolId?: string) => void;

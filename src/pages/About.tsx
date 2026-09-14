@@ -14,8 +14,8 @@ import {
   ExternalLink,
   Code
 } from 'lucide-react';
-import { PERSONAL_DATA } from '../../data/personal';
-import MathView from '../common/MathView';
+import { PERSONAL_DATA } from '../data/personal';
+import MathView from '../components/MathView';
 
 interface AboutPageProps {
   onNavigate?: (tab: string, subId?: string) => void;
@@ -72,13 +72,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-center space-y-5">
             {/* Profile Photo Placeholder */}
             <div className="relative mx-auto w-36 h-36 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950/40 border-2 border-dashed border-cyan-500/40 flex flex-col items-center justify-center p-4 group hover:border-cyan-400 transition">
-              <Camera className="w-8 h-8 text-cyan-400/70 mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px] font-mono text-cyan-300 font-semibold">
-                Photo Placeholder
-              </span>
-              <span className="text-[9px] text-slate-400">
-                Replace with portrait
-              </span>
+              <img
+              src="/profile.jpg"
+              alt="Raju Saha — Physics Student"
+              className="w-full h-full object-cover"
+              />
             </div>
 
             <div>

@@ -22,14 +22,14 @@ import {
   PERSONAL_DATA,
   WHAT_IM_EXPLORING,
   CURRENTLY_LEARNING
-} from '../../data/personal';
-import { PROJECTS_DATA } from '../../data/projects';
-import { NOTES_DATA } from '../../data/notes';
-import { LAB_EXPERIMENTS } from '../../data/labNotebook';
-import { Project } from '../../types';
-import MathView from '../common/MathView';
-import ContactSection from '../contact/ContactSection';
-import ProjectDetailModal from '../projects/ProjectDetailModal';
+} from '../data/personal';
+import { PROJECTS_DATA } from '../data/projects';
+import { NOTES_DATA } from '../data/notes';
+import { LAB_EXPERIMENTS } from '../data/labNotebook';
+import { Project } from '../types';
+import MathView from '../components/MathView';
+import Contact from './Contact';
+import ProjectDetailModal from '../components/ProjectDetailModal';
 
 interface HomePageProps {
   onNavigate: (tab: string, subId?: string) => void;
@@ -837,7 +837,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           9. CONTACT SECTION
           ======================================================= */}
       <section id="contact">
-        <ContactSection />
+        <Contact />
       </section>
 
       {/* Full Project Detail Modal */}

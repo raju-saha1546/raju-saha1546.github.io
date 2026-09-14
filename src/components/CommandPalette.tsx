@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Search, X, Wrench, Sparkles, BookOpen, ClipboardList, FolderGit2, ArrowRight } from 'lucide-react';
-import { NOTES_DATA } from '../../data/notes';
-import { PROJECTS_DATA } from '../../data/projects';
-import { LAB_EXPERIMENTS } from '../../data/labNotebook';
-import { FORMULAS_DATA } from '../../data/formulas';
+import { NOTES_DATA } from '../data/notes';
+import { PROJECTS_DATA } from '../data/projects';
+import { LAB_EXPERIMENTS } from '../data/labNotebook';
+import { FORMULAS_DATA } from '../data/formulas';
 
 interface CommandPaletteProps {
   isOpen: boolean;

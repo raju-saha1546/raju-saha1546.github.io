@@ -13,7 +13,7 @@ import {
   X,
   Github
 } from 'lucide-react';
-import { PERSONAL_DATA } from '../../data/personal';
+import { PERSONAL_DATA } from '../data/personal';
 
 interface NavbarProps {
   activeTab: string;

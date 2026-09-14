@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Github, Linkedin, MapPin, Send, MessageSquare, ExternalLink, CheckCircle2 } from 'lucide-react';
-import { PERSONAL_DATA } from '../../data/personal';
+import { PERSONAL_DATA } from '../data/personal';
 
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' });

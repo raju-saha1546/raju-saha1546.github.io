@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Zap, Copy, Check, RotateCcw } from 'lucide-react';
-import MathView from '../common/MathView';
+import MathView from '../components/MathView';
 
 export const OhmsLawCalculator: React.FC = () => {
   // We can let user pick which two are known, or directly enter any 2 of V, I, R, P

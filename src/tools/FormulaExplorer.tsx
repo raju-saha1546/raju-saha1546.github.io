@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { BookOpen, Search, ChevronRight, Calculator } from 'lucide-react';
-import { FORMULAS_DATA } from '../../data/formulas';
-import MathView from '../common/MathView';
+import { FORMULAS_DATA } from '../data/formulas';
+import MathView from '../components/MathView';
 
 interface FormulaExplorerProps {
   onOpenTool?: (toolId: string) => void;

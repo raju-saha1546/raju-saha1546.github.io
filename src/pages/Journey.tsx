@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Milestone, Calendar, Compass, BookOpen, Cpu, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
-import { JOURNEY_MILESTONES, JourneyMilestone } from '../../data/personal';
+import { JOURNEY_MILESTONES, JourneyMilestone } from '../data/personal';
 
 interface JourneyPageProps {
   onNavigate?: (tab: string, subId?: string) => void;

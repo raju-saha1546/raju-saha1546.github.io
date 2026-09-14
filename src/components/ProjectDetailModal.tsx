@@ -14,8 +14,8 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
-import { Project } from '../../types';
-import MathView from '../common/MathView';
+import { Project } from '../types';
+import MathView from './MathView';
 
 interface ProjectDetailModalProps {
   project: Project | null;

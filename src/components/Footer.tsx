@@ -1,6 +1,6 @@
 import React from 'react';
 import { Atom, Github, Mail, Linkedin, ArrowUpRight } from 'lucide-react';
-import { PERSONAL_DATA } from '../../data/personal';
+import { PERSONAL_DATA } from '../data/personal';
 
 interface FooterProps {
   onNavigate: (tab: string) => void;
