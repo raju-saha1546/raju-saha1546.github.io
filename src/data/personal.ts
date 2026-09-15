@@ -44,7 +44,7 @@ export interface PersonalBio {
 }
 
 export const PERSONAL_DATA: PersonalBio = {
-  name: 'Raju',
+  name: 'Raju Saha',
   role: 'Physics Student',
   tagline: 'Physics • Computation • Experiments',
   mainStatement: 'Exploring physics through theory, mathematics, experiment, and code.',
@@ -63,10 +63,10 @@ export const PERSONAL_DATA: PersonalBio = {
     'Documenting derivations and experimental logs with rigor'
   ],
   contact: {
-    email: 'raju.physics.lab@example.com', // Editable placeholder
+    email: 'rajusaha1546@gmail.com', // Editable placeholder
     github: 'https://github.com/raju-saha1546', // GitHub profile
-    linkedin: 'https://linkedin.com/in/placeholder-raju', // Editable placeholder
-    location: 'University Physics Department',
+    linkedin: '', // Editable placeholder
+    location: 'Malda College Physics Department',
     note: 'Open for academic discussions, physics student collaborations, and scientific computing inquiries.'
   }
 };

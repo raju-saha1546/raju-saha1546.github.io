@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, MapPin, Send, MessageSquare, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { Mail, Github, MapPin, Send, MessageSquare, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { PERSONAL_DATA } from '../data/personal';
 
 export const ContactSection: React.FC = () => {
@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div className="overflow-hidden">
                   <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
-                    Email (Placeholder)
+                    Email
                   </div>
                   <a
                     href={`mailto:${PERSONAL_DATA.contact.email}`}
@@ -82,27 +82,6 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* LinkedIn */}
-              <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-950 border border-slate-800">
-                <div className="w-8 h-8 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
-                  <Linkedin className="w-4 h-4" />
-                </div>
-                <div className="overflow-hidden">
-                  <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
-                    LinkedIn (Placeholder)
-                  </div>
-                  <a
-                    href={PERSONAL_DATA.contact.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-xs font-mono text-slate-300 hover:text-cyan-300 flex items-center gap-1 truncate"
-                  >
-                    <span>linkedin.com/in/raju-physics</span>
-                    <ExternalLink className="w-3 h-3 text-slate-400" />
-                  </a>
-                </div>
-              </div>
-
               {/* Location */}
               <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-950 border border-slate-800">
                 <div className="w-8 h-8 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
@@ -117,13 +96,6 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-cyan-950/20 border border-cyan-500/20 text-xs text-slate-400 space-y-1">
-              <span className="text-cyan-300 font-semibold font-mono">Editable Placeholder Notice:</span>
-              <p>
-                All email and external social links are editable placeholders configured in <code className="text-cyan-300">src/data/personal.ts</code>.
-              </p>
             </div>
           </div>
         </div>
