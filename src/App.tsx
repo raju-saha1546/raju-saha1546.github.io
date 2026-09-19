@@ -10,6 +10,7 @@ import Notes from './pages/Notes';
 import Lab from './pages/Lab';
 import Tools from './pages/Tools';
 import Contact from './pages/Contact';
+import { useTheme } from './context/ThemeContext';
 
 const VALID_TABS = ['home', 'about', 'journey', 'projects', 'notes', 'lab', 'tools', 'contact'];
 
@@ -42,28 +43,44 @@ function parseCurrentRoute(): { tab: string; subId?: string } {
 }
 
 export default function App() {
-  const initialRoute = parseCurrentRoute();
-  const [activeTab, setActiveTab] = useState<string>(initialRoute.tab);
-  const [activeItemId, setActiveItemId] = useState<string | undefined>(initialRoute.subId);
+  const [activeTab, setActiveTab] = useState<string>('home');
+  const [activeItemId, setActiveItemId] = useState<string | undefined>(undefined);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
+  // Synchronize with URL hash / path on mount and on popstate (browser back/forward)
   useEffect(() => {
-    const syncFromLocation = () => {
-      const route = parseCurrentRoute();
-      setActiveTab(route.tab);
-      if (route.subId) setActiveItemId(route.subId);
+    const syncRoute = () => {
+      const { tab, subId } = parseCurrentRoute();
+      setActiveTab(tab);
+      if (subId) setActiveItemId(subId);
     };
 
-    window.addEventListener('popstate', syncFromLocation);
-    window.addEventListener('hashchange', syncFromLocation);
+    syncRoute();
+    window.addEventListener('popstate', syncRoute);
+    window.addEventListener('hashchange', syncRoute);
+
     return () => {
-      window.removeEventListener('popstate', syncFromLocation);
-      window.removeEventListener('hashchange', syncFromLocation);
+      window.removeEventListener('popstate', syncRoute);
+      window.removeEventListener('hashchange', syncRoute);
     };
   }, []);
 
+  // Keyboard shortcut for Command Palette (Cmd+K or Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleNavigate = (tab: string, subId?: string) => {
-    // Normalization for aliases
     let targetTab = tab;
     if (tab === 'simulations') {
       targetTab = 'tools';
@@ -84,12 +101,30 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#05070d] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div
+      className={`app-container min-h-screen flex flex-col transition-colors duration-200 selection:bg-cyan-500/30 selection:text-cyan-200 ${
+        isDark
+          ? 'bg-[#080c14] text-slate-100'
+          : 'bg-[#f8fafc] text-slate-900'
+      }`}
+    >
       {/* Ambient background glow */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-[30rem] h-[30rem] bg-blue-600/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-1/3 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl"></div>
+        <div
+          className={`absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl transition-opacity duration-300 ${
+            isDark ? 'bg-cyan-500/5' : 'bg-cyan-500/10'
+          }`}
+        ></div>
+        <div
+          className={`absolute top-1/3 right-1/4 w-[30rem] h-[30rem] rounded-full blur-3xl transition-opacity duration-300 ${
+            isDark ? 'bg-blue-600/5' : 'bg-blue-500/10'
+          }`}
+        ></div>
+        <div
+          className={`absolute bottom-10 left-1/3 w-80 h-80 rounded-full blur-3xl transition-opacity duration-300 ${
+            isDark ? 'bg-indigo-500/5' : 'bg-indigo-500/10'
+          }`}
+        ></div>
       </div>
 
       {/* Global Navigation */}

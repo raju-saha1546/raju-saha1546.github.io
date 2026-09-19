@@ -50,20 +50,17 @@ export interface NoteSection {
 export interface Note {
   id: string;
   title: string;
-  category:
-    | 'Quantum Mechanics'
-    | 'Quantum Chemistry'
-    | 'Classical Mechanics'
-    | 'Electromagnetism'
-    | 'Mathematical Physics'
-    | 'Electronics'
-    | 'Computational Physics'
-    | 'Thermodynamics';
-  date: string;
-  readTime: string;
-  summary: string;
-  keyEquation: string;
-  sections: NoteSection[];
+  subject: string;
+  topic: string;
+  description: string;
+  date?: string;
+  pdfUrl: string;
+  // Optional convenience fields for broader compatibility
+  category?: string;
+  summary?: string;
+  readTime?: string;
+  keyEquation?: string;
+  sections?: NoteSection[];
   relatedTools?: string[];
   references?: string[];
 }

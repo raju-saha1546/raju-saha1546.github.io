@@ -199,58 +199,58 @@ export const CURRENTLY_LEARNING: LearningItem[] = [
 
 export const JOURNEY_MILESTONES: JourneyMilestone[] = [
   {
-    id: 'm-2026-curr',
-    period: '2026 (Present)',
-    title: 'Computational Physics & Independent Laboratory Exploration',
+    id: 'm-class12-2024',
+    period: '2024',
+    title: 'Class 12 / Higher Secondary Education',
     type: 'Milestone',
     description:
-      'Developing interactive physics simulations (double pendulum chaos, wave diffraction, Coulomb manifolds) and digital tools. Testing numerical algorithms like RK4 and implicit PDE integration.',
+      'Completed higher secondary education with a focus on science. Studying fundamental concepts in physics and mathematics during this period sparked my interest in understanding natural phenomena and physical laws through mathematical reasoning.',
     reflection:
-      'Building simulations taught me that writing the code yourself forces you to truly understand the physics. If you miss a sign or misinterpret an initial condition, the simulation reveals the mistake immediately.',
-    keyTakeaway: 'Numerical simulation bridges the gap between abstract equations and physical intuition.'
+      'Working through school-level physics problems and mathematics helped me realize that I wanted to pursue physics seriously at the undergraduate level rather than treating it merely as an exam subject.',
+    keyTakeaway: 'Developing a genuine curiosity for physical principles and mathematics motivated me to pursue an undergraduate degree in physics.'
   },
   {
-    id: 'm-2025-fall',
-    period: 'Late 2025',
-    title: 'Hardware Interfacing & Discrete Digital Logic Experiments',
-    type: 'Experiment',
-    description:
-      'Built a physical 4-bit ripple carry adder using discrete 74LS TTL integrated circuits (XOR, AND, OR) on breadboard, coupled with an Arduino microcontroller for test-vector verification and oscilloscope timing.',
-    reflection:
-      'Debugging floating inputs, breadboard stray capacitance, and propagation delays demystified how physical matter and semiconductor gates actually compute logical and arithmetic operations.',
-    keyTakeaway: 'Physical circuits always have noise, parasitic capacitance, and latency that idealized circuit diagrams omit.'
-  },
-  {
-    id: 'm-2025-spring',
-    period: 'Mid 2025',
-    title: 'Classical Mechanics & Mathematical Formulations',
+    id: 'm-ug-beginning',
+    period: '[Year]',
+    title: 'Beginning of Undergraduate Physics',
     type: 'Coursework',
     description:
-      'Delved into the principle of stationary action, Lagrangian mechanics, and Hamiltonian dynamics. Solved coupled oscillators, central force orbits, and generalized coordinate transformations.',
+      'Began my B.Sc. Physics journey, making the transition from school-level physics to university-level study. Started engaging with greater mathematical depth, formal derivations, and structured analytical problem solving.',
     reflection:
-      'Transitioning from Newtonian vector forces to energy-based variational principles (Euler-Lagrange) changed how I view nature. The laws of motion emerge naturally from minimizing action.',
-    keyTakeaway: 'The variational formulation of physics provides a unifying framework across mechanics, optics, and field theory.'
+      'The transition to university coursework showed me that university-level physics requires moving beyond formula memorization toward understanding how principles are derived from first principles.',
+    keyTakeaway: 'Transitioning to undergraduate physics requires developing disciplined study habits and deeper conceptual understanding.'
   },
   {
-    id: 'm-2024-fall',
-    period: 'Late 2024',
-    title: 'First Serious Experimental Physics Lab Course',
-    type: 'Experiment',
-    description:
-      'Conducted formal laboratory investigations: determining Planck\'s constant via stopping potential, verifying thermistor temperature dependencies, and measuring g via compound pendulums with rigorous uncertainty analysis.',
-    reflection:
-      'I learned that taking the measurements is only 30% of experimental work; understanding your systematic uncertainties, calculating error propagation, and defending your regression fit are what make data credible.',
-    keyTakeaway: 'An experimental number without an uncertainty budget is not a measurement—it is just an opinion.'
-  },
-  {
-    id: 'm-2024-spring',
-    period: 'Early 2024',
-    title: 'Foundational Physics & Calculus Matriculation',
+    id: 'm-building-foundations',
+    period: '[Year / Semester]',
+    title: 'Building Core Foundations',
     type: 'Coursework',
     description:
-      'Began rigorous undergraduate studies in Newtonian mechanics, special relativity, multivariable calculus, and linear algebra. Started coding physics homework solutions in Python.',
+      'Worked through core undergraduate physics and mathematics coursework alongside practical laboratory sessions. Focused on strengthening conceptual clarity, problem-solving skills, and learning standard laboratory measurement techniques and data handling.',
     reflection:
-      'Realized that mathematics is not just a calculation tool for physics—it is the native vocabulary in which the universe is articulated.',
-    keyTakeaway: 'Strong mathematical fundamentals are the bedrock of physical intuition.'
+      'Coursework and laboratory classes taught me the importance of patience, careful observations, and appreciating the connection between theoretical concepts and experimental measurements.',
+    keyTakeaway: 'Building solid fundamentals across theory, mathematics, and laboratory practice is essential for progress in physics.'
+  },
+  {
+    id: 'm-exploring-beyond',
+    period: '[Year / Semester]',
+    title: 'Exploring Physics Beyond Coursework',
+    type: 'Independent Study',
+    description:
+      'Began exploring topics beyond regular classroom lectures, with a growing interest in using computation, programming, data analysis, and visualization tools to explore and understand physical systems.',
+    reflection:
+      'Applying basic programming and computational visualization helped me see physics from a different angle, making abstract equations and mathematical relations more intuitive.',
+    keyTakeaway: 'Computational tools and independent exploration serve as valuable aids for developing physical intuition.'
+  },
+  {
+    id: 'm-5th-semester-present',
+    period: '5th Semester — Present',
+    title: '5th Semester: Continuing Undergraduate Physics',
+    type: 'Milestone',
+    description:
+      'Currently studying in the 5th semester of my 4-year B.Sc. Physics (Honours with Research) programme. Continuing to build my understanding of physics through coursework, problem solving, laboratory learning, computation, and independent study.',
+    reflection:
+      'Reaching the 5th semester has reinforced my commitment to learning physics steadily and thoroughly. I am focused on deepening my subject knowledge and exploring areas of interest as an undergraduate student.',
+    keyTakeaway: 'Consistent effort, curiosity, and thorough study continue to guide my undergraduate journey.'
   }
 ];

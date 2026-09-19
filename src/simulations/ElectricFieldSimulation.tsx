@@ -76,8 +76,10 @@ export const ElectricFieldSimulation: React.FC = () => {
     const w = rect.width;
     const h = rect.height;
 
+    const isLight = document.documentElement.classList.contains('light');
+
     // Clear
-    ctx.fillStyle = '#060911';
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(0, 0, w, h);
 
     const originX = w / 2;
@@ -151,9 +153,9 @@ export const ElectricFieldSimulation: React.FC = () => {
             ctx.translate(px, py);
             ctx.rotate(angle);
 
-            // Intensity color gradient from slate to cyan
-            const alpha = Math.min(0.85, 0.2 + eTotal * 0.5);
-            ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+            // Intensity color gradient
+            const alpha = Math.min(0.9, 0.35 + eTotal * 0.5);
+            ctx.strokeStyle = isLight ? `rgba(2, 132, 199, ${alpha})` : `rgba(56, 189, 248, ${alpha})`;
             ctx.beginPath();
             ctx.moveTo(-arrowLen / 2, 0);
             ctx.lineTo(arrowLen / 2, 0);

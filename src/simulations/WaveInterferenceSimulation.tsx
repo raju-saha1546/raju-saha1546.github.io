@@ -90,11 +90,13 @@ export const WaveInterferenceSimulation: React.FC = () => {
 
     ctx.putImageData(imgData, 0, 0);
 
+    const isLight = document.documentElement.classList.contains('light');
+
     // Draw slit barrier
-    ctx.fillStyle = '#475569';
+    ctx.fillStyle = isLight ? '#64748b' : '#475569';
     ctx.fillRect(slitX - 4, 0, 4, h);
     // Cut out slits
-    ctx.fillStyle = '#060911';
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(slitX - 5, slit1Y - 4, 6, 8);
     ctx.fillRect(slitX - 5, slit2Y - 4, 6, 8);
 
@@ -125,7 +127,9 @@ export const WaveInterferenceSimulation: React.FC = () => {
     const w = rect.width;
     const h = rect.height;
 
-    ctx.fillStyle = '#060911';
+    const isLight = document.documentElement.classList.contains('light');
+
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(0, 0, w, h);
 
     // Center screen line

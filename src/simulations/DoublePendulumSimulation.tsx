@@ -182,11 +182,13 @@ export const DoublePendulumSimulation: React.FC = () => {
     const w = rect.width;
     const h = rect.height;
 
-    ctx.fillStyle = '#060911';
+    const isLight = document.documentElement.classList.contains('light');
+
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(0, 0, w, h);
 
     // Subtle grid
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.06)';
+    ctx.strokeStyle = isLight ? 'rgba(15, 23, 42, 0.05)' : 'rgba(148, 163, 184, 0.06)';
     ctx.lineWidth = 1;
     for (let x = 0; x <= w; x += 30) {
       ctx.beginPath();
@@ -207,7 +209,7 @@ export const DoublePendulumSimulation: React.FC = () => {
 
     // Draw Twin Trail (Rose)
     if (showTwin && trailP2.length > 1) {
-      ctx.strokeStyle = 'rgba(244, 63, 94, 0.45)';
+      ctx.strokeStyle = isLight ? 'rgba(225, 29, 72, 0.55)' : 'rgba(244, 63, 94, 0.45)';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       trailP2.forEach((pt, i) => {
@@ -221,7 +223,7 @@ export const DoublePendulumSimulation: React.FC = () => {
 
     // Draw Primary Trail (Cyan)
     if (trailP1.length > 1) {
-      ctx.strokeStyle = 'rgba(6, 182, 212, 0.7)';
+      ctx.strokeStyle = isLight ? 'rgba(2, 132, 199, 0.8)' : 'rgba(6, 182, 212, 0.7)';
       ctx.lineWidth = 2;
       ctx.beginPath();
       trailP1.forEach((pt, i) => {
@@ -270,14 +272,14 @@ export const DoublePendulumSimulation: React.FC = () => {
 
     // Draw secondary if enabled
     if (showTwin) {
-      drawRodsAndBobs(p2, 'rgba(244, 63, 94, 0.5)', '#fb7185', true);
+      drawRodsAndBobs(p2, isLight ? 'rgba(225, 29, 72, 0.6)' : 'rgba(244, 63, 94, 0.5)', isLight ? '#e11d48' : '#fb7185', true);
     }
 
     // Draw primary
-    drawRodsAndBobs(p1, '#38bdf8', '#06b6d4', false);
+    drawRodsAndBobs(p1, isLight ? '#0284c7' : '#38bdf8', isLight ? '#0284c7' : '#06b6d4', false);
 
     // Pivot Anchor
-    ctx.fillStyle = '#94a3b8';
+    ctx.fillStyle = isLight ? '#475569' : '#94a3b8';
     ctx.beginPath();
     ctx.arc(originX, originY, 4, 0, Math.PI * 2);
     ctx.fill();

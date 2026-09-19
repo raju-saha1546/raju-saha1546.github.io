@@ -249,12 +249,14 @@ export const DataAnalysisTool: React.FC = () => {
     const width = rect.width;
     const height = rect.height;
 
-    ctx.fillStyle = '#060911';
+    const isLight = document.documentElement.classList.contains('light');
+
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(0, 0, width, height);
 
     const points = parsedData.points;
     if (points.length < 2) {
-      ctx.fillStyle = '#64748b';
+      ctx.fillStyle = isLight ? '#64748b' : '#94a3b8';
       ctx.font = '12px Fira Code';
       ctx.textAlign = 'center';
       ctx.fillText('Please provide at least 2 valid numeric data points to plot', width / 2, height / 2);
@@ -287,7 +289,7 @@ export const DataAnalysisTool: React.FC = () => {
     const toScreenY = (y: number) => padTop + plotH - ((y - minY) / (maxY - minY)) * plotH;
 
     // Draw Grid
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.08)';
+    ctx.strokeStyle = isLight ? 'rgba(15, 23, 42, 0.07)' : 'rgba(148, 163, 184, 0.08)';
     ctx.lineWidth = 1;
 
     for (let i = 0; i <= 5; i++) {
@@ -306,7 +308,7 @@ export const DataAnalysisTool: React.FC = () => {
       // Axis labels
       const vx = minX + (i / 5) * (maxX - minX);
       const vy = maxY - (i / 5) * (maxY - minY);
-      ctx.fillStyle = '#64748b';
+      ctx.fillStyle = isLight ? '#475569' : '#64748b';
       ctx.font = '10px Fira Code';
       ctx.textAlign = 'center';
       ctx.fillText(vx.toExponential(1), gx, height - 12);
@@ -316,7 +318,7 @@ export const DataAnalysisTool: React.FC = () => {
 
     // Draw fitted curve if available
     if (fitResults && fitResults.predict) {
-      ctx.strokeStyle = '#06b6d4';
+      ctx.strokeStyle = isLight ? '#0284c7' : '#06b6d4';
       ctx.lineWidth = 2.5;
       ctx.beginPath();
 
@@ -339,13 +341,13 @@ export const DataAnalysisTool: React.FC = () => {
       const sy = toScreenY(p.y);
 
       // Outer halo
-      ctx.fillStyle = 'rgba(56, 189, 248, 0.2)';
+      ctx.fillStyle = isLight ? 'rgba(2, 132, 199, 0.2)' : 'rgba(56, 189, 248, 0.2)';
       ctx.beginPath();
       ctx.arc(sx, sy, 8, 0, Math.PI * 2);
       ctx.fill();
 
       // Core point
-      ctx.fillStyle = '#38bdf8';
+      ctx.fillStyle = isLight ? '#0284c7' : '#38bdf8';
       ctx.beginPath();
       ctx.arc(sx, sy, 4, 0, Math.PI * 2);
       ctx.fill();

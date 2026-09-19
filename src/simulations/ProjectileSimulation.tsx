@@ -119,8 +119,10 @@ export const ProjectileSimulation: React.FC = () => {
     const width = rect.width;
     const height = rect.height;
 
+    const isLight = document.documentElement.classList.contains('light');
+
     // Clear canvas
-    ctx.fillStyle = '#060911';
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(0, 0, width, height);
 
     // Coordinate scaling
@@ -132,7 +134,7 @@ export const ProjectileSimulation: React.FC = () => {
     const toY = (y: number) => originY - y * scale;
 
     // Draw ground grid
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.08)';
+    ctx.strokeStyle = isLight ? 'rgba(15, 23, 42, 0.06)' : 'rgba(148, 163, 184, 0.08)';
     ctx.lineWidth = 1;
     for (let x = 0; x <= width; x += 30) {
       ctx.beginPath();
@@ -148,7 +150,7 @@ export const ProjectileSimulation: React.FC = () => {
     }
 
     // Ground plane
-    ctx.strokeStyle = '#38bdf8';
+    ctx.strokeStyle = isLight ? '#0284c7' : '#38bdf8';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(0, originY);
@@ -156,7 +158,7 @@ export const ProjectileSimulation: React.FC = () => {
     ctx.stroke();
 
     // Distance tick markers along ground
-    ctx.fillStyle = '#64748b';
+    ctx.fillStyle = isLight ? '#334155' : '#64748b';
     ctx.font = '10px Fira Code';
     const tickStep = 20;
     for (let m = 0; m * scale < width - originX; m += tickStep) {
@@ -169,7 +171,7 @@ export const ProjectileSimulation: React.FC = () => {
     }
 
     // Launch Cannon / Platform
-    ctx.fillStyle = '#334155';
+    ctx.fillStyle = isLight ? '#64748b' : '#334155';
     ctx.fillRect(originX - 10, toY(launchHeight), 12, launchHeight * scale || 8);
 
     // Cannon barrel
@@ -183,7 +185,7 @@ export const ProjectileSimulation: React.FC = () => {
 
     // Draw Trajectory Path
     if (trajectory.length > 1) {
-      ctx.strokeStyle = 'rgba(6, 182, 212, 0.7)';
+      ctx.strokeStyle = isLight ? 'rgba(2, 132, 199, 0.85)' : 'rgba(6, 182, 212, 0.7)';
       ctx.lineWidth = 2.5;
       ctx.beginPath();
       ctx.moveTo(toX(trajectory[0].x), toY(trajectory[0].y));
@@ -198,13 +200,13 @@ export const ProjectileSimulation: React.FC = () => {
     const py = toY(currentPos.y);
 
     // Glowing halo
-    ctx.fillStyle = 'rgba(56, 189, 248, 0.3)';
+    ctx.fillStyle = isLight ? 'rgba(2, 132, 199, 0.25)' : 'rgba(56, 189, 248, 0.3)';
     ctx.beginPath();
     ctx.arc(px, py, 12, 0, Math.PI * 2);
     ctx.fill();
 
     // Ball
-    ctx.fillStyle = '#38bdf8';
+    ctx.fillStyle = isLight ? '#0284c7' : '#38bdf8';
     ctx.beginPath();
     ctx.arc(px, py, 6, 0, Math.PI * 2);
     ctx.fill();

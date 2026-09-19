@@ -1,0 +1,103 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2097 >>
+stream
+0.15 0.35 0.55 RG 1.5 w
+40 40 532 712 re S
+0.92 0.95 0.98 rg
+41 680 530 71 re f
+0.2 0.45 0.65 RG 1 w
+41 680 530 71 re S
+BT
+/F2 15 Tf
+0.05 0.15 0.3 rg
+60 725 Td (Electromagnetism -- Maxwell's Equations) Tj
+/F1 10 Tf
+0.25 0.3 0.35 rg
+0 -22 Td (Subject: Electromagnetism   |   Topic: Unified Vector Field Theory & Electromagnetic Waves) Tj
+0 -16 Td (Author: Raju Saha   |   Date: 2026-09-19   |   B.Sc. Physics) Tj
+ET
+0.75 0.8 0.85 RG 1 w
+60 660 m 512 660 l S
+BT
+/F1 10.5 Tf
+0.12 0.12 0.15 rg
+60 635 Td
+16 TL
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(1. Differential Maxwell Equations in Free Space) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(In vacuum without charges or conduction currents, the electromagnetic field obeys:) Tj T*
+(1. Gauss's Law for Electricity: div\(E\) = 0) Tj T*
+(2. Gauss's Law for Magnetism: div\(B\) = 0) Tj T*
+(3. Faraday's Law of Induction: curl\(E\) = - d\(B\)/dt) Tj T*
+(4. Ampere-Maxwell Law: curl\(B\) = mu_0 * eps_0 * d\(E\)/dt) Tj T*
+T*
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(2. Displacement Current) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(James Clerk Maxwell identified that Ampere's original circuit law violated charge) Tj T*
+(conservation for non-steady currents \(e.g. charging capacitors\). Adding the displacement) Tj T*
+(current term mu_0 * eps_0 * d\(E\)/dt restored continuity and predicted wave propagation.) Tj T*
+T*
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(3. Derivation of the Electromagnetic Wave Equation) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(Taking the curl of Faraday's Law and utilizing the vector identity curl\(curl\(E\)\) =) Tj T*
+(grad\(div\(E\)\) - del^2\(E\) uncouples the fields into the wave equation:) Tj T*
+(del^2\(E\) - mu_0 * eps_0 * d^2\(E\)/dt^2 = 0.) Tj T*
+T*
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(4. The Speed of Light) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(The wave speed c = 1 / sqrt\(mu_0 * eps_0\) matches the measured speed of light,) Tj T*
+(demonstrating that light is an electromagnetic disturbance.) Tj T*
+ET
+0.8 0.85 0.9 RG 0.75 w
+60 65 m 512 65 l S
+BT
+/F1 8.5 Tf
+0.45 0.5 0.55 rg
+60 52 Td
+(Personal Physics Notes Library -- B.Sc. Physics \(Honours with Research\)) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000327 00000 n 
+0000000402 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2551
+%%EOF

@@ -75,6 +75,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
+      const isLight = document.documentElement.classList.contains('light');
+
       // Focus point situated on the right side of the hero for desktop, center for mobile
       const isMobile = width < 768;
       const centerX = isMobile ? width * 0.5 : width * 0.76;
@@ -83,7 +85,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       // 1. Subtle polar coordinate grid rings (delicate background geometry)
       const baseRadii = [45, 95, 150, 210, 275];
       for (const r of baseRadii) {
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.04)';
+        ctx.strokeStyle = isLight ? 'rgba(2, 132, 199, 0.08)' : 'rgba(56, 189, 248, 0.04)';
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
@@ -91,7 +93,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
         // Subtle quadrant markers on the grid rings
         const markers = [0, Math.PI * 0.5, Math.PI, Math.PI * 1.5];
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.09)';
+        ctx.strokeStyle = isLight ? 'rgba(2, 132, 199, 0.2)' : 'rgba(56, 189, 248, 0.09)';
         for (const angle of markers) {
           const mx = centerX + r * Math.cos(angle);
           const my = centerY + r * Math.sin(angle);
@@ -102,7 +104,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       }
 
       // 2. Primary harmonic orbital wave (simulating atomic orbital / standing wavefunction)
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.22)';
+      ctx.strokeStyle = isLight ? 'rgba(2, 132, 199, 0.4)' : 'rgba(56, 189, 248, 0.22)';
       ctx.lineWidth = 1.3;
       ctx.beginPath();
       const points = 160;
@@ -122,7 +124,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ctx.stroke();
 
       // 3. Secondary harmonic resonance loop (counter-propagating phase)
-      ctx.strokeStyle = 'rgba(99, 102, 241, 0.16)';
+      ctx.strokeStyle = isLight ? 'rgba(79, 70, 229, 0.32)' : 'rgba(99, 102, 241, 0.16)';
       ctx.lineWidth = 1.1;
       ctx.beginPath();
       for (let i = 0; i <= points; i++) {
@@ -140,7 +142,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ctx.stroke();
 
       // 4. Outer equipotential streamline loop (faint tertiary wave)
-      ctx.strokeStyle = 'rgba(14, 165, 233, 0.09)';
+      ctx.strokeStyle = isLight ? 'rgba(14, 165, 233, 0.2)' : 'rgba(14, 165, 233, 0.09)';
       ctx.lineWidth = 1;
       ctx.beginPath();
       for (let i = 0; i <= points; i++) {
@@ -162,16 +164,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       // Soft luminous aura around the wave packet
       const grad = ctx.createRadialGradient(orbX, orbY, 0, orbX, orbY, 18);
-      grad.addColorStop(0, 'rgba(56, 189, 248, 0.6)');
-      grad.addColorStop(0.4, 'rgba(56, 189, 248, 0.18)');
-      grad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      if (isLight) {
+        grad.addColorStop(0, 'rgba(2, 132, 199, 0.45)');
+        grad.addColorStop(0.4, 'rgba(2, 132, 199, 0.15)');
+        grad.addColorStop(1, 'rgba(2, 132, 199, 0)');
+      } else {
+        grad.addColorStop(0, 'rgba(56, 189, 248, 0.6)');
+        grad.addColorStop(0.4, 'rgba(56, 189, 248, 0.18)');
+        grad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      }
       ctx.fillStyle = grad;
       ctx.beginPath();
       ctx.arc(orbX, orbY, 18, 0, Math.PI * 2);
       ctx.fill();
 
       // Core packet dot
-      ctx.fillStyle = 'rgba(224, 242, 254, 0.95)';
+      ctx.fillStyle = isLight ? '#0284c7' : 'rgba(224, 242, 254, 0.95)';
       ctx.beginPath();
       ctx.arc(orbX, orbY, 2.5, 0, Math.PI * 2);
       ctx.fill();
@@ -182,7 +190,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       const secX = centerX + secRadius * Math.cos(secAngle);
       const secY = centerY + secRadius * Math.sin(secAngle);
 
-      ctx.fillStyle = 'rgba(129, 140, 248, 0.7)';
+      ctx.fillStyle = isLight ? '#4f46e5' : 'rgba(129, 140, 248, 0.7)';
       ctx.beginPath();
       ctx.arc(secX, secY, 2, 0, Math.PI * 2);
       ctx.fill();
@@ -340,22 +348,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <Wrench className="w-3.5 h-3.5 text-indigo-400" />
               <span>Open Physics Lab</span>
             </button>
-          </div>
-
-          {/* Subtle Formula Underpinning */}
-          <div className="pt-6 border-t border-slate-800/80 flex flex-wrap items-center gap-6 text-xs font-mono text-slate-400">
-            <div className="flex items-center gap-2">
-              <span className="text-slate-500">Quantum State:</span>
-              <MathView math="i\hbar \partial_t \Psi = \hat{H}\Psi" className="text-cyan-300" />
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-slate-500">Variational Action:</span>
-              <MathView math="\delta S = 0" className="text-cyan-300" />
-            </div>
-            <div className="hidden sm:flex items-center gap-2">
-              <span className="text-slate-500">Induction:</span>
-              <MathView math="\nabla \times \mathbf{E} = -\partial_t \mathbf{B}" className="text-cyan-300" />
-            </div>
           </div>
         </div>
       </section>

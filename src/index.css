@@ -17,12 +17,12 @@
   .light {
     --bg-primary: #f8fafc;
     --bg-secondary: #ffffff;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --border-subtle: rgba(100, 116, 139, 0.18);
+    --bg-card: #ffffff;
+    --border-subtle: #e2e8f0;
     --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent-cyan: #0891b2;
-    --accent-teal: #0d9488;
+    --text-secondary: #334155;
+    --accent-cyan: #0284c7;
+    --accent-teal: #0f766e;
     --accent-blue: #2563eb;
     --grid-line: rgba(15, 23, 42, 0.04);
   }
@@ -31,7 +31,7 @@
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
     overflow-x: hidden;
   }
 
@@ -42,6 +42,320 @@
   .font-display {
     font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   }
+}
+
+/* =========================================================
+   LIGHT MODE DESIGN SYSTEM - SCIENTIFIC CLARITY & CONTRAST
+   ========================================================= */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light *::selection {
+  background-color: #bae6fd !important;
+  color: #0369a1 !important;
+}
+
+html.light .app-container {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* 1. Surfaces: Outer Cards, Panels & Modals */
+html.light .bg-slate-900,
+html.light [class*="bg-slate-900/"],
+html.light [class*="bg-slate-900 "] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* 2. Insets, Nested Wells, Table Headers & Secondary Sub-cards */
+html.light .bg-slate-950,
+html.light [class*="bg-slate-950/"],
+html.light [class*="bg-slate-950 "] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* 3. Secondary Buttons, Filter Pills & Inactive Chips */
+html.light .bg-slate-800,
+html.light [class*="bg-slate-800/"],
+html.light [class*="bg-slate-800 "] {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .bg-slate-700,
+html.light [class*="bg-slate-700/"],
+html.light [class*="bg-slate-700 "] {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Hover effects on light mode interactive elements */
+html.light [class*="hover:bg-slate-800"]:hover,
+html.light [class*="hover:bg-slate-700"]:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light [class*="hover:bg-slate-900"]:hover {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* 4. Global Borders & Dividers */
+html.light [class*="border-slate-800"],
+html.light [class*="border-slate-700"],
+html.light [class*="border-slate-600"] {
+  border-color: #e2e8f0 !important;
+}
+
+html.light [class*="hover:border-slate-700"]:hover,
+html.light [class*="hover:border-slate-600"]:hover {
+  border-color: #cbd5e1 !important;
+}
+
+/* 5. Typography Hierarchy & Contrast */
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-300,
+html.light .text-slate-400 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+/* 6. Scientific Accents & Legible Color Mappings */
+html.light .text-cyan-400,
+html.light .text-cyan-300,
+html.light .text-cyan-200 {
+  color: #0369a1 !important;
+}
+
+html.light .text-sky-300,
+html.light .text-sky-400 {
+  color: #0284c7 !important;
+}
+
+html.light .text-teal-300,
+html.light .text-teal-400 {
+  color: #0f766e !important;
+}
+
+html.light .text-indigo-300,
+html.light .text-indigo-400 {
+  color: #4338ca !important;
+}
+
+html.light .text-emerald-400,
+html.light .text-emerald-300 {
+  color: #047857 !important;
+}
+
+html.light .text-amber-400,
+html.light .text-amber-300 {
+  color: #b45309 !important;
+}
+
+html.light .text-purple-400,
+html.light .text-purple-300 {
+  color: #7e22ce !important;
+}
+
+html.light .text-rose-400,
+html.light .text-rose-300 {
+  color: #be123c !important;
+}
+
+/* 7. Category & Status Badges (Soft Tint + Crisp Border + Colored Text) */
+html.light [class*="bg-cyan-950"] {
+  background-color: #f0fdfa !important;
+  border-color: #99f6e4 !important;
+  color: #0f766e !important;
+}
+
+html.light [class*="bg-indigo-950"] {
+  background-color: #eef2ff !important;
+  border-color: #c7d2fe !important;
+  color: #4338ca !important;
+}
+
+html.light [class*="bg-emerald-950"] {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #047857 !important;
+}
+
+html.light [class*="bg-amber-950"] {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+}
+
+html.light [class*="bg-purple-950"] {
+  background-color: #faf5ff !important;
+  border-color: #e9d5ff !important;
+  color: #7e22ce !important;
+}
+
+html.light [class*="bg-blue-950"] {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1d4ed8 !important;
+}
+
+html.light [class*="bg-rose-950"] {
+  background-color: #fff1f2 !important;
+  border-color: #fecdd3 !important;
+  color: #be123c !important;
+}
+
+/* Active buttons & tab highlights */
+html.light .bg-cyan-500 {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+html.light .bg-cyan-500:hover {
+  background-color: #0369a1 !important;
+}
+
+html.light .bg-cyan-500.text-slate-950,
+html.light .bg-cyan-500 .text-slate-950 {
+  color: #ffffff !important;
+}
+
+html.light [class*="bg-cyan-500/10"],
+html.light [class*="bg-cyan-500/20"] {
+  background-color: #f0fdfa !important;
+  color: #0369a1 !important;
+}
+
+html.light [class*="border-cyan-500"] {
+  border-color: #0284c7 !important;
+}
+
+/* 8. Hero Section Styling in Light Mode */
+html.light #hero-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.03) !important;
+}
+
+html.light #hero-section h1 span {
+  background-image: linear-gradient(to right, #0284c7, #2563eb, #4f46e5) !important;
+}
+
+html.light #hero-btn-about {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px 0 rgba(2, 132, 199, 0.25) !important;
+}
+
+html.light #hero-btn-about:hover {
+  background-color: #0369a1 !important;
+  box-shadow: 0 6px 20px 0 rgba(2, 132, 199, 0.35) !important;
+}
+
+html.light #hero-btn-work {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light #hero-btn-work:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+html.light #hero-btn-tools {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html.light #hero-btn-tools:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* 9. Form Controls & Inputs */
+html.light input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #0284c7 !important;
+  outline: 2px solid rgba(2, 132, 199, 0.2) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light input[type="range"] {
+  accent-color: #0284c7;
+}
+
+/* 10. Modals & Overlays */
+html.light .fixed.inset-0.bg-slate-950\/85,
+html.light .fixed.inset-0.bg-slate-950\/80 {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+}
+
+/* 11. KaTeX Math Equations */
+html.light .katex {
+  color: #0f172a !important;
+}
+
+html.light .katex .mord,
+html.light .katex .mbin,
+html.light .katex .mrel,
+html.light .katex .mopen,
+html.light .katex .mclose,
+html.light .katex .mpunct {
+  color: inherit;
+}
+
+/* 12. Scientific Schematics & SVG text overrides */
+html.light svg text[fill="#7dd3fc"],
+html.light svg text[fill="#38bdf8"] {
+  fill: #0284c7 !important;
+}
+
+html.light svg circle[fill="#0f172a"],
+html.light svg rect[fill="#1e293b"] {
+  fill: #f1f5f9 !important;
+  stroke: #0284c7 !important;
+}
+
+html.light svg rect[stroke="#475569"],
+html.light svg line[stroke="#475569"] {
+  stroke: #94a3b8 !important;
 }
 
 /* Scientific Grid Backgrounds */
@@ -79,12 +393,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(148, 163, 184, 0.25);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(148, 163, 184, 0.45);
 }
 
 /* Math typesetting adjustments */

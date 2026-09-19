@@ -89,11 +89,13 @@ export const HarmonicOscillatorSimulation: React.FC = () => {
     const w = rect.width;
     const h = rect.height;
 
-    ctx.fillStyle = '#060911';
+    const isLight = document.documentElement.classList.contains('light');
+
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(0, 0, w, h);
 
     // Subtle background grid
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.07)';
+    ctx.strokeStyle = isLight ? 'rgba(15, 23, 42, 0.06)' : 'rgba(148, 163, 184, 0.07)';
     ctx.lineWidth = 1;
     for (let x = 0; x <= w; x += 25) {
       ctx.beginPath();
@@ -118,15 +120,15 @@ export const HarmonicOscillatorSimulation: React.FC = () => {
       const bobY = pivotY + rodPixelLength * Math.cos(thetaOrX);
 
       // Pivot base
-      ctx.fillStyle = '#475569';
+      ctx.fillStyle = isLight ? '#94a3b8' : '#475569';
       ctx.fillRect(pivotX - 30, pivotY - 8, 60, 8);
-      ctx.fillStyle = '#94a3b8';
+      ctx.fillStyle = isLight ? '#475569' : '#94a3b8';
       ctx.beginPath();
       ctx.arc(pivotX, pivotY, 5, 0, Math.PI * 2);
       ctx.fill();
 
       // String / Rod
-      ctx.strokeStyle = '#38bdf8';
+      ctx.strokeStyle = isLight ? '#0284c7' : '#38bdf8';
       ctx.lineWidth = 2.5;
       ctx.beginPath();
       ctx.moveTo(pivotX, pivotY);
@@ -134,13 +136,13 @@ export const HarmonicOscillatorSimulation: React.FC = () => {
       ctx.stroke();
 
       // Bob glow
-      ctx.fillStyle = 'rgba(6, 182, 212, 0.3)';
+      ctx.fillStyle = isLight ? 'rgba(2, 132, 199, 0.25)' : 'rgba(6, 182, 212, 0.3)';
       ctx.beginPath();
       ctx.arc(bobX, bobY, 18, 0, Math.PI * 2);
       ctx.fill();
 
       // Bob solid
-      ctx.fillStyle = '#06b6d4';
+      ctx.fillStyle = isLight ? '#0284c7' : '#06b6d4';
       ctx.beginPath();
       ctx.arc(bobX, bobY, 12, 0, Math.PI * 2);
       ctx.fill();
@@ -152,11 +154,11 @@ export const HarmonicOscillatorSimulation: React.FC = () => {
       const massX = restX + thetaOrX * 70;
 
       // Wall
-      ctx.fillStyle = '#475569';
+      ctx.fillStyle = isLight ? '#94a3b8' : '#475569';
       ctx.fillRect(wallX - 10, centerY - 40, 10, 80);
 
       // Spring zigzag
-      ctx.strokeStyle = '#38bdf8';
+      ctx.strokeStyle = isLight ? '#0284c7' : '#38bdf8';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(wallX, centerY);
@@ -170,9 +172,9 @@ export const HarmonicOscillatorSimulation: React.FC = () => {
       ctx.stroke();
 
       // Mass block
-      ctx.fillStyle = '#06b6d4';
+      ctx.fillStyle = isLight ? '#0284c7' : '#06b6d4';
       ctx.fillRect(massX, centerY - 20, 40, 40);
-      ctx.strokeStyle = '#38bdf8';
+      ctx.strokeStyle = isLight ? '#0369a1' : '#38bdf8';
       ctx.strokeRect(massX, centerY - 20, 40, 40);
     }
   }, [mode, thetaOrX, lengthOrK]);
@@ -193,11 +195,13 @@ export const HarmonicOscillatorSimulation: React.FC = () => {
     const w = rect.width;
     const h = rect.height;
 
-    ctx.fillStyle = '#060911';
+    const isLight = document.documentElement.classList.contains('light');
+
+    ctx.fillStyle = isLight ? '#f8fafc' : '#060911';
     ctx.fillRect(0, 0, w, h);
 
     // Axes
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.2)';
+    ctx.strokeStyle = isLight ? 'rgba(15, 23, 42, 0.12)' : 'rgba(148, 163, 184, 0.2)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(w / 2, 0);
@@ -207,7 +211,7 @@ export const HarmonicOscillatorSimulation: React.FC = () => {
     ctx.stroke();
 
     // Axis labels
-    ctx.fillStyle = '#64748b';
+    ctx.fillStyle = isLight ? '#475569' : '#64748b';
     ctx.font = '9px Fira Code';
     ctx.fillText('Pos (x / θ)', w - 60, h / 2 - 6);
     ctx.fillText('Vel (v / ω)', w / 2 + 6, 14);

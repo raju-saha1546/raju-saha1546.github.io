@@ -1,0 +1,101 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2066 >>
+stream
+0.15 0.35 0.55 RG 1.5 w
+40 40 532 712 re S
+0.92 0.95 0.98 rg
+41 680 530 71 re f
+0.2 0.45 0.65 RG 1 w
+41 680 530 71 re S
+BT
+/F2 15 Tf
+0.05 0.15 0.3 rg
+60 725 Td (Classical Mechanics -- Lagrangian Dynamics) Tj
+/F1 10 Tf
+0.25 0.3 0.35 rg
+0 -22 Td (Subject: Classical Mechanics   |   Topic: Principle of Least Action & Euler-Lagrange Equations) Tj
+0 -16 Td (Author: Raju Saha   |   Date: 2026-09-19   |   B.Sc. Physics) Tj
+ET
+0.75 0.8 0.85 RG 1 w
+60 660 m 512 660 l S
+BT
+/F1 10.5 Tf
+0.12 0.12 0.15 rg
+60 635 Td
+16 TL
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(1. Generalized Coordinates & Constraints) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(Real mechanical systems often subject particles to geometric constraints \(holonomic\).) Tj T*
+(Using generalized coordinates q_1, q_2, ..., q_n reduces the equations of motion to) Tj T*
+(the actual degrees of freedom, bypassing unknown constraint forces.) Tj T*
+T*
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(2. Hamilton's Principle of Stationary Action) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(The actual trajectory followed by a dynamic system between two configurations at times) Tj T*
+(t_1 and t_2 is one that renders the action functional stationary: delta S = 0,) Tj T*
+(where the action S is the time integral of the Lagrangian L = T - V.) Tj T*
+T*
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(3. Derivation of Euler-Lagrange Equations) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(Applying the calculus of variations to delta S = 0 with fixed boundary variations) Tj T*
+(yields: d/dt\(del L / del q_dot_j\) - \(del L / del q_j\) = 0 for each coordinate.) Tj T*
+T*
+/F2 12.5 Tf
+0.08 0.22 0.4 rg
+(4. Conservation Laws and Symmetries) Tj T*
+/F1 10.5 Tf
+0.15 0.15 0.18 rg
+(By Noether's theorem, spatial translation symmetry yields linear momentum conservation,) Tj T*
+(rotational symmetry yields angular momentum conservation, and time invariance) Tj T*
+(guarantees conservation of total mechanical energy.) Tj T*
+ET
+0.8 0.85 0.9 RG 0.75 w
+60 65 m 512 65 l S
+BT
+/F1 8.5 Tf
+0.45 0.5 0.55 rg
+60 52 Td
+(Personal Physics Notes Library -- B.Sc. Physics \(Honours with Research\)) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000327 00000 n 
+0000000402 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2520
+%%EOF

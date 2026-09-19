@@ -89,8 +89,10 @@ export const ScientificPlotter: React.FC = () => {
     const width = rect.width;
     const height = rect.height;
 
+    const isLight = document.documentElement.classList.contains('light');
+
     // Clear canvas
-    ctx.fillStyle = '#060911';
+    ctx.fillStyle = isLight ? '#ffffff' : '#060911';
     ctx.fillRect(0, 0, width, height);
 
     // Transform math coords to screen coords
@@ -99,7 +101,7 @@ export const ScientificPlotter: React.FC = () => {
 
     // Draw grid
     ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(148, 163, 184, 0.08)';
+    ctx.strokeStyle = isLight ? 'rgba(15, 23, 42, 0.07)' : 'rgba(148, 163, 184, 0.08)';
 
     // Vertical grid lines
     const xRange = xMax - xMin;
@@ -107,7 +109,7 @@ export const ScientificPlotter: React.FC = () => {
     if (xRange / xStep > 15) xStep *= 2;
     const firstX = Math.ceil(xMin / xStep) * xStep;
 
-    ctx.fillStyle = '#64748b';
+    ctx.fillStyle = isLight ? '#475569' : '#64748b';
     ctx.font = '10px Fira Code, monospace';
 
     for (let x = firstX; x <= xMax; x += xStep) {
@@ -140,7 +142,7 @@ export const ScientificPlotter: React.FC = () => {
 
     // Draw main axes (x=0 and y=0)
     ctx.lineWidth = 1.5;
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
+    ctx.strokeStyle = isLight ? 'rgba(2, 132, 199, 0.5)' : 'rgba(56, 189, 248, 0.35)';
 
     // Y axis (x=0)
     if (xMin <= 0 && xMax >= 0) {
